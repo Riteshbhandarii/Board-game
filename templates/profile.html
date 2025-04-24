@@ -1,0 +1,15 @@
+<!-- board_games/templates/board_games/profile.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Your Profile</h2>
+  <h3>Borrowed Games</h3>
+  <ul>
+    {% for game in borrowed_games %}
+      <li>{{ game.game.name }} - Borrowed on {{ game.borrowed_date }} <a href="{% url 'return_game' game.id %}">Return</a></li>
+    {% empty %}
+      <li>No games borrowed yet.</li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'edit_profile' %}">Edit Profile</a>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+  <!-- ############### Step 10: Login Form ############### -->
+  <div class="container">
+    <h2>Login</h2>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}  <!-- Render form fields as paragraphs -->
+      <button type="submit" class="btn btn-primary">Log In</button>
+    </form>
+  </div>
+{% endblock %}

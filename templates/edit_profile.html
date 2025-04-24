@@ -1,0 +1,16 @@
+<!-- board_games/templates/board_games/edit_profile.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Edit Profile</h2>
+  <form method="POST">
+    {% csrf_token %}
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" value="{{ user.username }}">
+    <br>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" value="{{ user.email }}">
+    <br>
+    <button type="submit">Save Changes</button>
+  </form>
+{% endblock %}
